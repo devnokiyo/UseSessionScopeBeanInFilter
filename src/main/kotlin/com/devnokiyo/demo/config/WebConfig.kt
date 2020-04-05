@@ -33,7 +33,6 @@ class WebConfig : WebMvcConfigurer {
         return ThymeleafViewResolver()
                 .apply {
                     templateEngine = templateEngine()
-                    order = 1
                 }
     }
 
@@ -42,7 +41,6 @@ class WebConfig : WebMvcConfigurer {
         return FilterRegistrationBean(SessionFilter())
                 .apply {
                     addUrlPatterns("/*")
-                    order = Int.MIN_VALUE
                 }
     }
 }
